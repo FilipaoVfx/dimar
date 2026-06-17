@@ -30,8 +30,8 @@ const currentPath = Astro.url.pathname;
 	<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary antialiased">
         <!-- TopNavBar -->
         <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md flex justify-between items-center px-4 md:px-8 py-4 border-b border-surface-variant">
-            <a href="/" class="text-2xl font-black tracking-tighter text-primary uppercase font-headline">
-                DIMAR EVENTOS
+            <a href="/" class="flex items-center" aria-label="DIMAR Producción de Eventos - Inicio">
+                <img src="/brand/logo-dimar.png" alt="DIMAR Producción de Eventos" class="h-10 md:h-11 w-auto" width="180" height="141" />
             </a>
             <div class="hidden md:flex gap-8 items-center font-headline uppercase tracking-wider text-sm">
                 <a class={`transition-colors duration-300 ${currentPath === '/' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary'}`} href="/">Inicio</a>
@@ -51,7 +51,7 @@ const currentPath = Astro.url.pathname;
         <footer class="bg-surface-container-lowest py-16 border-t border-surface-variant mt-20">
             <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div class="space-y-6">
-                    <div class="text-xl font-bold text-on-surface uppercase font-headline">DIMAR EVENTOS</div>
+                    <img src="/brand/logo-dimar.png" alt="DIMAR Producción de Eventos" class="h-12 w-auto" width="200" height="157" />
                     <p class="text-on-surface-variant text-sm font-body leading-relaxed">Expertos en producción técnica de eventos. De la idea a la ejecución impecable.</p>
                 </div>
                 <div class="space-y-4">
