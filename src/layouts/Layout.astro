@@ -13,7 +13,7 @@ const currentPath = Astro.url.pathname;
 <html lang="es" class="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
         <meta name="description" content="DIMAR Producción de Eventos. Producción integral de eventos con estética premium y ejecución impecable." />
@@ -29,19 +29,49 @@ const currentPath = Astro.url.pathname;
 	</head>
 	<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary antialiased">
         <!-- TopNavBar -->
-        <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md flex justify-between items-center px-4 md:px-8 py-4 border-b border-surface-variant">
-            <a href="/" class="flex items-center" aria-label="DIMAR Producción de Eventos - Inicio">
-                <img src="/brand/logo-dimar.png" alt="DIMAR Producción de Eventos" class="h-10 md:h-11 w-auto" width="180" height="141" />
-            </a>
-            <div class="hidden md:flex gap-8 items-center font-headline uppercase tracking-wider text-sm">
-                <a class={`transition-colors duration-300 ${currentPath === '/' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary'}`} href="/">Inicio</a>
-                <a class={`transition-colors duration-300 ${currentPath === '/portafolio' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary'}`} href="/portafolio">Portafolio</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/#servicios">Servicios</a>
+        <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-surface-variant">
+            <div class="flex justify-between items-center px-4 md:px-8 py-4">
+                <a href="/" class="flex items-center" aria-label="DIMAR Producción de Eventos - Inicio">
+                    <img src="/brand/logo-dimar.png" alt="DIMAR Producción de Eventos" class="h-10 md:h-11 w-auto" width="180" height="141" />
+                </a>
+                <div class="hidden md:flex gap-8 items-center font-headline uppercase tracking-wider text-sm">
+                    <a class={`transition-colors duration-300 ${currentPath === '/' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary'}`} href="/">Inicio</a>
+                    <a class={`transition-colors duration-300 ${currentPath === '/portafolio' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary'}`} href="/portafolio">Portafolio</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/#servicios">Servicios</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="/cotizar" class="bg-primary px-5 py-2 rounded-sm text-on-primary font-bold text-sm uppercase tracking-widest hover:bg-primary-dim transition-all">
+                        Cotizar
+                    </a>
+                    <!-- Hamburger (mobile only) -->
+                    <button id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" class="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8 p-0.5">
+                        <span class="block h-0.5 w-full bg-on-surface transition-all duration-300"></span>
+                        <span class="block h-0.5 w-full bg-on-surface transition-all duration-300"></span>
+                        <span class="block h-0.5 w-full bg-on-surface transition-all duration-300"></span>
+                    </button>
+                </div>
             </div>
-            <a href="/cotizar" class="hidden sm:inline-block bg-primary px-6 py-2 rounded-sm text-on-primary font-bold text-sm uppercase tracking-widest active:duration-100 hover:bg-primary-dim transition-all">
-                Cotizar Evento
-            </a>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden border-t border-surface-variant bg-background/95 backdrop-blur-md">
+                <div class="flex flex-col px-4 py-4 gap-4 font-headline uppercase tracking-wider text-sm">
+                    <a class={`py-2 transition-colors duration-300 ${currentPath === '/' ? 'text-primary' : 'text-on-surface-variant'}`} href="/">Inicio</a>
+                    <a class={`py-2 transition-colors duration-300 ${currentPath === '/portafolio' ? 'text-primary' : 'text-on-surface-variant'}`} href="/portafolio">Portafolio</a>
+                    <a class="py-2 text-on-surface-variant" href="/#servicios">Servicios</a>
+                    <a href="/cotizar" class="mt-2 bg-primary px-5 py-3 rounded-sm text-on-primary font-bold text-sm uppercase tracking-widest text-center">
+                        Cotizar Evento
+                    </a>
+                </div>
+            </div>
         </nav>
+
+        <script>
+            const toggle = document.getElementById('nav-toggle');
+            const menu = document.getElementById('mobile-menu');
+            toggle?.addEventListener('click', () => {
+                const open = menu?.classList.toggle('hidden') === false;
+                toggle.setAttribute('aria-expanded', String(open));
+            });
+        </script>
 
         <main class="min-h-screen pt-[72px]">
 		    <slot />
