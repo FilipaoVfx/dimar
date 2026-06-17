@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Mock data for the portfolio items
+const portfolioItems = [
+    { title: "Gala Corporativa TechNova", category: "Corporativo", image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2669&auto=format&fit=crop" },
+    { title: "Boda Silva & López", category: "Bodas", image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2670&auto=format&fit=crop" },
+    { title: "Evento de Lanzamiento", category: "Corporativo", image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2670&auto=format&fit=crop" },
+    { title: "Quinceaños Isabella", category: "Sociales", image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=2669&auto=format&fit=crop" },
+    { title: "Cena Privada VIP", category: "Privado", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2670&auto=format&fit=crop" },
+    { title: "Convención Anual", category: "Corporativo", image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2612&auto=format&fit=crop" },
+];
+---
+
+<Layout title="Portafolio">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 min-h-screen">
+        <div class="text-center mb-16">
+            <h1 class="font-playfair text-4xl md:text-5xl font-bold tracking-wider uppercase mb-6 text-white animate-fade-in-up">Nuestro Portafolio</h1>
+            <div class="h-px w-24 bg-neutral-700 mx-auto mb-8 animate-fade-in-up animation-delay-200"></div>
+            <p class="text-neutral-400 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up animation-delay-200">
+                Una selección de nuestros trabajos más destacados. Eventos que combinan diseño de vanguardia con una impecable ejecución.
+            </p>
+        </div>
+
+        <!-- Filter Categories (UI Only for now) -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up animation-delay-400">
+            <button class="px-6 py-2 border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-400 rounded-sm text-sm font-medium tracking-wide transition-colors uppercase bg-neutral-800">Todos</button>
+            <button class="px-6 py-2 border border-transparent text-neutral-500 hover:text-white rounded-sm text-sm tracking-wide transition-colors uppercase">Bodas</button>
+            <button class="px-6 py-2 border border-transparent text-neutral-500 hover:text-white rounded-sm text-sm tracking-wide transition-colors uppercase">Corporativo</button>
+            <button class="px-6 py-2 border border-transparent text-neutral-500 hover:text-white rounded-sm text-sm tracking-wide transition-colors uppercase">Privado</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up animation-delay-400">
+            {portfolioItems.map((item) => (
+                <div class="group relative overflow-hidden rounded-sm cursor-pointer aspect-square bg-neutral-900 border border-neutral-800/50">
+                    <img src={item.image} alt={item.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 p-8 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                        <span class="text-xs text-neutral-400 uppercase tracking-widest mb-3 block">{item.category}</span>
+                        <h3 class="text-2xl font-playfair text-white">{item.title}</h3>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .animate-fade-in-up {
+        animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+    }
+    .animation-delay-200 {
+        animation-delay: 200ms;
+    }
+    .animation-delay-400 {
+        animation-delay: 400ms;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Inicio">
+    <!-- Hero Section -->
+    <section class="relative h-[90vh] w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="/hero-bg.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-8 text-center pt-20">
+            <h1 class="font-headline font-black text-6xl md:text-8xl leading-none tracking-tighter uppercase mb-6 text-glow">
+                PRODUCCIÓN QUE <br/> <span class="text-primary">TRANSFORMA</span> ESPACIOS
+            </h1>
+            <p class="max-w-2xl mx-auto text-on-surface-variant text-lg md:text-xl font-light tracking-tight mb-12">
+                Elevamos la experiencia sensorial de tus eventos masivos a través de ingeniería técnica de precisión y diseño escénico de vanguardia.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <a href="/cotizar" class="w-full md:w-auto bg-primary text-on-primary px-10 py-5 rounded-sm font-headline font-bold uppercase tracking-widest hover:scale-105 transition-transform text-center inline-block">
+                    Cotizar Evento
+                </a>
+                <a href="/portafolio" class="w-full md:w-auto border-2 border-outline-variant text-on-surface px-10 py-5 rounded-sm font-headline font-bold uppercase tracking-widest hover:bg-surface-variant transition-colors text-center inline-block">
+                    Nuestra Experiencia
+                </a>
+            </div>
+        </div>
+        <!-- Tech HUD Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            <span class="text-[10px] font-mono tracking-[0.3em] text-primary uppercase">Status: Ready</span>
+            <div class="w-px h-12 bg-gradient-to-b from-primary to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="py-32 bg-surface-container-lowest relative overflow-hidden">
+        <div class="orange-light-bleed absolute top-0 left-0 w-full h-full pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-16 relative z-10">
+            <div class="space-y-6">
+                <div class="w-16 h-16 bg-surface-container-highest flex items-center justify-center rounded-sm text-primary">
+                    <span class="material-symbols-outlined text-3xl">bolt</span>
+                </div>
+                <h3 class="font-headline text-2xl font-bold uppercase tracking-tight">Impacto Visual</h3>
+                <p class="text-on-surface-variant leading-relaxed">Creamos entornos inmersivos que cautivan a la audiencia desde el primer segundo con tecnología de última generación.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="w-16 h-16 bg-surface-container-highest flex items-center justify-center rounded-sm text-primary">
+                    <span class="material-symbols-outlined text-3xl">settings_input_component</span>
+                </div>
+                <h3 class="font-headline text-2xl font-bold uppercase tracking-tight">Excelencia Técnica</h3>
+                <p class="text-on-surface-variant leading-relaxed">Precisión milimétrica en montaje de estructuras y sincronización audiovisual para una ejecución impecable.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="w-16 h-16 bg-surface-container-highest flex items-center justify-center rounded-sm text-primary">
+                    <span class="material-symbols-outlined text-3xl">energy_savings_leaf</span>
+                </div>
+                <h3 class="font-headline text-2xl font-bold uppercase tracking-tight">Energía Pura</h3>
+                <p class="text-on-surface-variant leading-relaxed">Diseñamos la atmósfera perfecta que potencia la emoción y conexión de cada asistente con el escenario.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="servicios" class="py-32 bg-surface">
+        <div class="max-w-7xl mx-auto px-8 mb-20">
+            <span class="text-primary font-mono text-sm tracking-[0.4em] uppercase block mb-4">Core capabilities</span>
+            <h2 class="font-impact text-5xl md:text-7xl uppercase tracking-tighter">Nuestros Servicios</h2>
+        </div>
+        <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-outline-variant/10 cursor-default">
+            <!-- Service 1 -->
+            <div class="group bg-surface-container-low p-12 hover:bg-surface-container-high transition-all duration-500">
+                <div class="flex justify-between items-start mb-16">
+                    <span class="material-symbols-outlined text-primary text-4xl">volume_up</span>
+                    <span class="font-mono text-outline-variant">01</span>
+                </div>
+                <h4 class="font-impact text-2xl uppercase mb-4 group-hover:text-primary transition-colors">Sonido de Alta Fidelidad</h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-8">Sistemas Line Array y microfonía profesional para una cobertura acústica impecable en cualquier recinto.</p>
+                <div class="h-px w-0 group-hover:w-full bg-primary transition-all duration-500"></div>
+            </div>
+            <!-- Service 2 -->
+            <div class="group bg-surface-container-low p-12 hover:bg-surface-container-high transition-all duration-500">
+                <div class="flex justify-between items-start mb-16">
+                    <span class="material-symbols-outlined text-primary text-4xl">light_mode</span>
+                    <span class="font-mono text-outline-variant">02</span>
+                </div>
+                <h4 class="font-impact text-2xl uppercase mb-4 group-hover:text-primary transition-colors">Iluminación Escénica</h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-8">Diseño de luces robóticas y efectos atmosféricos que definen la narrativa visual de tu evento.</p>
+                <div class="h-px w-0 group-hover:w-full bg-primary transition-all duration-500"></div>
+            </div>
+            <!-- Service 3 -->
+            <div class="group bg-surface-container-low p-12 hover:bg-surface-container-high transition-all duration-500">
+                <div class="flex justify-between items-start mb-16">
+                    <span class="material-symbols-outlined text-primary text-4xl">architecture</span>
+                    <span class="font-mono text-outline-variant">03</span>
+                </div>
+                <h4 class="font-impact text-2xl uppercase mb-4 group-hover:text-primary transition-colors">Estructuras y Trussing</h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-8">Montaje seguro de escenarios, torres elevadoras y estructuras de soporte certificadas.</p>
+                <div class="h-px w-0 group-hover:w-full bg-primary transition-all duration-500"></div>
+            </div>
+            <!-- Service 4 -->
+            <div class="group bg-surface-container-low p-12 hover:bg-surface-container-high transition-all duration-500">
+                <div class="flex justify-between items-start mb-16">
+                    <span class="material-symbols-outlined text-primary text-4xl">flare</span>
+                    <span class="font-mono text-outline-variant">04</span>
+                </div>
+                <h4 class="font-impact text-2xl uppercase mb-4 group-hover:text-primary transition-colors">Efectos Especiales</h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-8">Co2, chispas frías, lanzallamas y confeti para momentos de máximo impacto emocional.</p>
+                <div class="h-px w-0 group-hover:w-full bg-primary transition-all duration-500"></div>
+            </div>
+            <!-- Service 5 -->
+            <div class="group bg-surface-container-low p-12 hover:bg-surface-container-high transition-all duration-500">
+                <div class="flex justify-between items-start mb-16">
+                    <span class="material-symbols-outlined text-primary text-4xl">videocam</span>
+                    <span class="font-mono text-outline-variant">05</span>
+                </div>
+                <h4 class="font-impact text-2xl uppercase mb-4 group-hover:text-primary transition-colors">Audiovisual LED</h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-8">Pantallas LED de alta resolución y circuitos cerrados de televisión para una visibilidad total.</p>
+                <div class="h-px w-0 group-hover:w-full bg-primary transition-all duration-500"></div>
+            </div>
+            <!-- Service 6 -->
+            <div class="group bg-surface-container-low p-12 hover:bg-surface-container-high transition-all duration-500">
+                <div class="flex justify-between items-start mb-16">
+                    <span class="material-symbols-outlined text-primary text-4xl">precision_manufacturing</span>
+                    <span class="font-mono text-outline-variant">06</span>
+                </div>
+                <h4 class="font-impact text-2xl uppercase mb-4 group-hover:text-primary transition-colors">Producción Integral</h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-8">Gestión técnica 360º desde la conceptualización hasta el desmonte final del evento.</p>
+                <div class="h-px w-0 group-hover:w-full bg-primary transition-all duration-500"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Gallery -->
+    <section class="py-32 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto px-8 mb-20 text-center">
+            <h2 class="font-headline text-5xl font-black uppercase tracking-tight mb-4 text-white">Portfolio en Acción</h2>
+            <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 px-4 max-w-7xl mx-auto">
+            <div class="md:col-span-2 md:row-span-2 group relative overflow-hidden bg-surface-variant shadow-lg shadow-black/50">
+                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" alt="stage production" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjARAehTkuvAtthzLL9S9qbZjr3taHo5ecy3dAWC2KdZsno_wAHUdSDohjoBUTKe4yYBnlfR2Kyo2N6v4nycVhVwTPUJQnDygBl_dtLVTQ9pkkm4sPMc0k9PHb28RPjDHW8kR2h6e3KUB7YREh_0u_uea9jS7m7ijiHIAKUgJ-cu3gpLp9-yXwIzV2Arh6lq5-RUvfMKn_He1u9drFIY9Neuhi0l_kr06LKytcT1nB_XS1vLBOyZyAlrpiJKrerNdg0Y1tjC-4bIk" />
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                    <span class="bg-black/60 backdrop-blur-md px-4 py-2 text-xs font-mono uppercase tracking-widest text-white">Main Stage Production</span>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden bg-surface-variant aspect-square shadow-lg shadow-black/50">
+                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="structure assembly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuJfVAJegj35Zzou1WzXxwI9zYDgi8pQt1DpCQU4xycIKWZYByVdvxiYktEtXMScjIPMj-MoGdYz3F6mJaJkcy2HxkdPfZj2TKwCFzClkCW1kDBTfX7MYRpuxEhEAT7Jy72aAQgAmvh-ujqQ-ek22rgrJ4dT2gzFs5bQvot08yPjOzXnChNuuIA4oTy64mkI_2aa8wMP1J0zOR6BJzKcqhzin6jPJiCrdPH2TTTT71iVmA4t5DJNsKD2kLIjkYO06G5wjpQrGieZs" />
+            </div>
+            <div class="group relative overflow-hidden bg-surface-variant aspect-square shadow-lg shadow-black/50">
+                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYUvdI1RoxHFDxuMfeCNI0wwN71AVsN46mJTEHcqc6p6yZkF2HNrf5XVeg0HKvfmE43elReb7366Lr4pUtdYxvUSGdU3s1xqI3zMwt_s4uYugCUAQa3QtfL0X48tGhziMpw5-vsvQkoCnqO0AiCiIQZgLHZRR1IV7MxqInBxsykAmDx1gDTR75JoICzMswfXW3ZXQ8HuEewXlTb0hHhrvdrQeHhUmQjOM2DAOdblh2w0v3ZAkeu8EAHmofqUd9OGySlt-pGkHkXGA" />
+            </div>
+            <div class="md:col-span-2 group relative overflow-hidden bg-surface-variant aspect-video shadow-lg shadow-black/50">
+                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="live sound" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM511YUOCHd1DmC21SeSoi1Rhb7GAUF0TKs9DAIxE-umlKSx9y6O7cAveSHfNHBgs7VO6-i7xGCe2b_t9ErfPjtirV26CPtehII5hrcHMC2_2uhVPjicpfGmVuOSJSrA5uUuw6V7hbt1df41wUpO6cUX4Nl1k2wQGN41d1EOpxTS-hUBGJ0wxjqC9N6zQHHkgSd7jUd27Lo7CKHyS_K1pBM41eXw8bZp3MCFF-myPh2ksWd0VVA9Ty7Ao1WIZBHT3RMTscMVbcMCQ" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Large CTA Section -->
+    <section class="relative py-40 overflow-hidden bg-black">
+        <div class="absolute inset-0 opacity-20">
+            <img class="w-full h-full object-cover" alt="dj mixing table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZHVkKA8XrgUApOpZAwV6C5e8oKsrzWM-NZ5GRA_WVGHsn7CfVrwqE35vqf8MUKf4DlxEdQ6PMYeF83ZJnWBm5LJdVgNtFLeuhqKBcWU-rWLhfmhrCnpBq4UNVPTuGttqNERZaGj070a_jvl-t3TKWXYvUeqKN0LXZLo-1pXa3mMvbV6YpKwlhMdy8zesf4RzhZEmQAUy5yQRExRskYAHS4R8ggItynSjyXGXTbVvmOehY2zabe4J2kZaqXE6lTnXmpYFlU4DWKFA" />
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-8 text-center">
+            <h2 class="font-headline text-5xl md:text-7xl font-black uppercase leading-none mb-8 tracking-tighter shadow-black drop-shadow-xl text-white">
+                Llevamos tu evento al <br/><span class="text-primary text-glow">siguiente nivel</span>
+            </h2>
+            <p class="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto drop-shadow-md shadow-black">
+                No importa la escala. Tenemos la tecnología y el equipo humano para hacerlo realidad.
+            </p>
+            <a class="inline-flex items-center gap-4 bg-primary text-on-primary px-12 py-6 rounded-sm font-headline font-bold uppercase tracking-widest hover:bg-primary-dim transition-all group shadow-lg shadow-primary/20" href="/cotizar">
+                <span class="material-symbols-outlined text-2xl">chat</span>
+                Contactar Ahora
+                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </a>
+        </div>
+        <!-- Decorative Grid -->
+        <div class="absolute inset-0 border-[40px] border-surface-container-lowest pointer-events-none opacity-50"></div>
+    </section>
+</Layout>

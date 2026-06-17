@@ -1,0 +1,168 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Cotizar Evento">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 min-h-screen">
+        <div class="text-center mb-16">
+            <h1 class="font-playfair text-4xl md:text-5xl font-bold tracking-wider uppercase mb-6 text-white animate-fade-in-up">Cotiza tu Evento</h1>
+            <div class="h-px w-24 bg-neutral-700 mx-auto mb-8 animate-fade-in-up animation-delay-200"></div>
+            <p class="text-neutral-400 font-light leading-relaxed animate-fade-in-up animation-delay-200">
+                Déjanos los detalles de tu evento y nuestro equipo de productores se pondrá en contacto contigo para empezar a hacerlo realidad.
+            </p>
+        </div>
+
+        <div class="bg-neutral-900 border border-neutral-800 p-8 sm:p-12 rounded-sm shadow-2xl animate-fade-in-up animation-delay-400 relative overflow-hidden">
+            <!-- Decorative gradient -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-neutral-100/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+
+            <form id="cotizar-form" class="space-y-8 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Nombre -->
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium text-neutral-300 mb-2 uppercase tracking-wider text-xs">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required class="w-full bg-neutral-950 border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500 transition-colors placeholder-neutral-700 font-light" placeholder="Ej. Mariana Gómez" />
+                    </div>
+                    
+                    <!-- Teléfono -->
+                    <div>
+                        <label for="telefono" class="block text-sm font-medium text-neutral-300 mb-2 uppercase tracking-wider text-xs">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" required class="w-full bg-neutral-950 border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500 transition-colors placeholder-neutral-700 font-light" placeholder="+57 300 000 0000" />
+                    </div>
+
+                    <!-- Tipo de Evento -->
+                    <div>
+                        <label for="tipo_evento" class="block text-sm font-medium text-neutral-300 mb-2 uppercase tracking-wider text-xs">Tipo de Evento *</label>
+                        <select id="tipo_evento" name="tipo_evento" required class="w-full bg-neutral-950 border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500 transition-colors appearance-none font-light">
+                            <option value="">Selecciona una opción...</option>
+                            <option value="Corporativo">Corporativo</option>
+                            <option value="Boda">Boda</option>
+                            <option value="15 Años">15 Años</option>
+                            <option value="Privado VIP">Privado VIP</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <!-- Número de personas -->
+                    <div>
+                        <label for="num_personas" class="block text-sm font-medium text-neutral-300 mb-2 uppercase tracking-wider text-xs">Número de Personas</label>
+                        <input type="number" id="num_personas" name="num_personas" class="w-full bg-neutral-950 border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500 transition-colors placeholder-neutral-700 font-light" placeholder="Ej. 150" />
+                    </div>
+
+                    <!-- Fecha -->
+                    <div>
+                        <label for="fecha" class="block text-sm font-medium text-neutral-300 mb-2 uppercase tracking-wider text-xs">Fecha Estimada</label>
+                        <input type="date" id="fecha" name="fecha" class="w-full bg-neutral-950 border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500 transition-colors [color-scheme:dark] font-light" />
+                    </div>
+
+                    <!-- Ubicación -->
+                    <div>
+                        <label for="ubicacion" class="block text-sm font-medium text-neutral-300 mb-2 uppercase tracking-wider text-xs">Ubicación / Ciudad</label>
+                        <input type="text" id="ubicacion" name="ubicacion" class="w-full bg-neutral-950 border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500 transition-colors placeholder-neutral-700 font-light" placeholder="Ciudad o lugar específico" />
+                    </div>
+                </div>
+
+                <!-- Servicios requeridos -->
+                <div>
+                    <label class="block text-sm font-medium text-neutral-300 mb-4 uppercase tracking-wider text-xs">Servicios Requeridos (Selecciona varios)</label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" name="servicios" value="Locación" class="form-checkbox h-4 w-4 bg-neutral-950 border-neutral-700 text-neutral-500 focus:ring-neutral-500 rounded-sm !accent-neutral-500 transition-colors" />
+                            <span class="text-neutral-400 group-hover:text-white transition-colors text-sm font-light">Locación</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" name="servicios" value="Catering" class="form-checkbox h-4 w-4 bg-neutral-950 border-neutral-700 text-neutral-500 focus:ring-neutral-500 rounded-sm !accent-neutral-500 transition-colors" />
+                            <span class="text-neutral-400 group-hover:text-white transition-colors text-sm font-light">Catering</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" name="servicios" value="Decoración" class="form-checkbox h-4 w-4 bg-neutral-950 border-neutral-700 text-neutral-500 focus:ring-neutral-500 rounded-sm !accent-neutral-500 transition-colors" />
+                            <span class="text-neutral-400 group-hover:text-white transition-colors text-sm font-light">Decoración</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" name="servicios" value="Música/DJ" class="form-checkbox h-4 w-4 bg-neutral-950 border-neutral-700 text-neutral-500 focus:ring-neutral-500 rounded-sm !accent-neutral-500 transition-colors" />
+                            <span class="text-neutral-400 group-hover:text-white transition-colors text-sm font-light">Música / DJ</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Detalles adicionales -->
+                <div>
+                    <label for="detalles" class="block text-sm font-medium text-neutral-300 mb-2 uppercase tracking-wider text-xs">Detalles Adicionales</label>
+                    <textarea id="detalles" name="detalles" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500 transition-colors resize-none placeholder-neutral-700 font-light" placeholder="Cuéntanos más sobre cómo imaginas tu evento..."></textarea>
+                </div>
+
+                <div class="pt-6 flex flex-col sm:flex-row justify-between items-center border-t border-neutral-800/50">
+                    <p class="text-xs text-neutral-500 hidden sm:block font-light">Al enviar este formulario, serás redirigido a WhatsApp.</p>
+                    <button type="submit" class="w-full sm:w-auto bg-neutral-50 text-neutral-950 px-10 py-4 rounded-sm text-sm font-semibold tracking-wide hover:bg-neutral-200 transition-colors uppercase shadow-lg shadow-white/5 flex justify-center items-center">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12.01 2.014c-5.46 0-9.89 4.43-9.89 9.89 0 1.74.45 3.39 1.31 4.88L2 22l5.42-1.42c1.45.81 3.06 1.23 4.59 1.23 5.46 0 9.89-4.43 9.89-9.89 0-5.46-4.43-9.89-9.89-9.89zm0 18.06c-1.47 0-2.88-.41-4.13-1.15l-.29-.17-3.07.8.82-2.99-.19-.3A8.15 8.15 0 0 1 3.84 11.9c0-4.52 3.68-8.2 8.2-8.2 4.52 0 8.2 3.68 8.2 8.2 0 4.52-3.68 8.2-8.2 8.2zm4.49-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.17.25-.64.8-.78.96-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.23-.74-.66-1.24-1.48-1.39-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.41.08-.17.04-.32-.02-.44-.06-.12-.55-1.32-.76-1.81-.2-.48-.41-.42-.55-.42h-.47c-.17 0-.44.06-.66.3-22 .25-.86.84-.86 2.04s.88 2.37 1 2.54c.12.17 1.73 2.64 4.19 3.7.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.2-.58.2-.1.08-1.18-.08-.12-.25-.19-.5-.31z"/></svg>
+                        Contactar vía WhatsApp
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</Layout>
+
+<script>
+    const form = document.getElementById('cotizar-form');
+
+    form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const target = e.target as HTMLFormElement;
+        const formData = new FormData(target);
+        
+        const nombre = formData.get('nombre');
+        const telefono = formData.get('telefono');
+        const tipoEvento = formData.get('tipo_evento');
+        const numPersonas = formData.get('num_personas') || 'No especificado';
+        const fecha = formData.get('fecha') || 'Por definir';
+        const ubicacion = formData.get('ubicacion') || 'Por definir';
+        const servicios = formData.getAll('servicios').join(', ') || 'No especificado';
+        const detalles = formData.get('detalles');
+
+        // Formar el mensaje
+        let text = `Hola *DIMAR Eventos*, quisiera cotizar un evento.\n\n`;
+        text += `*Nombre:* ${nombre}\n`;
+        text += `*Tipo:* ${tipoEvento}\n`;
+        text += `*Personas:* ${numPersonas}\n`;
+        text += `*Fecha:* ${fecha}\n`;
+        text += `*Ubicación:* ${ubicacion}\n`;
+        text += `*Servicios de interés:* ${servicios}\n`;
+        if (detalles) {
+            text += `*Detalles:* ${detalles}\n`;
+        }
+        
+        const numeroWhatsApp = '573000000000'; // Replace with actual number
+        const waUrl = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(text)}`;
+        
+        // Aquí deberíamos guardar en Supabase según el RF3, por ahora redirigimos:
+        window.open(waUrl, '_blank');
+        
+        target.reset();
+    });
+</script>
+
+<style>
+    .animate-fade-in-up {
+        animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+    }
+    .animation-delay-200 {
+        animation-delay: 200ms;
+    }
+    .animation-delay-400 {
+        animation-delay: 400ms;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

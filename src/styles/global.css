@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0e0e0e;
+  --color-on-background: #ffffff;
+  
+  --color-primary: #ff915a;
+  --color-on-primary: #531e00;
+  --color-primary-dim: #ff7526;
+  --color-primary-fixed: #ff7a31;
+  --color-on-primary-fixed: #000000;
+  
+  --color-surface: #0e0e0e;
+  --color-on-surface: #ffffff;
+  --color-surface-variant: #262626;
+  --color-on-surface-variant: #adaaaa;
+  
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #131313;
+  --color-surface-container: #1a1919;
+  --color-surface-container-high: #201f1f;
+  --color-surface-container-highest: #262626;
+  
+  --color-outline: #777575;
+  --color-outline-variant: #494847;
+
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-impact: 'Montserrat', sans-serif;
+}
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255, 145, 90, 0.4);
+  }
+  .orange-light-bleed {
+    background: radial-gradient(circle at center, rgba(255, 145, 90, 0.15) 0%, transparent 70%);
+  }
+  .glass-panel {
+    background: rgba(38, 38, 38, 0.6);
+    backdrop-filter: blur(20px);
+  }
+}

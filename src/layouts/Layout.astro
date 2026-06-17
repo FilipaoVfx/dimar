@@ -1,0 +1,91 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+        <meta name="description" content="DIMAR Producción de Eventos. Producción integral de eventos con estética premium y ejecución impecable." />
+		<title>{title} | DIMAR EVENTOS</title>
+        
+        <!-- Fonts: Space Grotesk, Inter, Montserrat -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+        
+        <!-- Material Symbols -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+	</head>
+	<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary antialiased">
+        <!-- TopNavBar -->
+        <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md flex justify-between items-center px-4 md:px-8 py-4 border-b border-surface-variant">
+            <a href="/" class="text-2xl font-black tracking-tighter text-primary uppercase font-headline">
+                DIMAR EVENTOS
+            </a>
+            <div class="hidden md:flex gap-8 items-center font-headline uppercase tracking-wider text-sm">
+                <a class={`transition-colors duration-300 ${currentPath === '/' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary'}`} href="/">Inicio</a>
+                <a class={`transition-colors duration-300 ${currentPath === '/portafolio' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant hover:text-primary'}`} href="/portafolio">Portafolio</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="/#servicios">Servicios</a>
+            </div>
+            <a href="/cotizar" class="hidden sm:inline-block bg-primary px-6 py-2 rounded-sm text-on-primary font-bold text-sm uppercase tracking-widest active:duration-100 hover:bg-primary-dim transition-all">
+                Cotizar Evento
+            </a>
+        </nav>
+
+        <main class="min-h-screen pt-[72px]">
+		    <slot />
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-surface-container-lowest py-16 border-t border-surface-variant mt-20">
+            <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="space-y-6">
+                    <div class="text-xl font-bold text-on-surface uppercase font-headline">DIMAR EVENTOS</div>
+                    <p class="text-on-surface-variant text-sm font-body leading-relaxed">Expertos en producción técnica de eventos. De la idea a la ejecución impecable.</p>
+                </div>
+                <div class="space-y-4">
+                    <h5 class="text-primary font-bold text-sm uppercase tracking-widest">Navegación</h5>
+                    <ul class="space-y-2 text-on-surface-variant text-sm font-body">
+                        <li><a class="hover:text-primary transition-all opacity-80 hover:opacity-100" href="/">Inicio</a></li>
+                        <li><a class="hover:text-primary transition-all opacity-80 hover:opacity-100" href="/#servicios">Servicios</a></li>
+                        <li><a class="hover:text-primary transition-all opacity-80 hover:opacity-100" href="/portafolio">Portafolio</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h5 class="text-primary font-bold text-sm uppercase tracking-widest">Social</h5>
+                    <ul class="space-y-2 text-on-surface-variant text-sm font-body">
+                        <li><a class="hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">WhatsApp</a></li>
+                        <li><a class="hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">Instagram</a></li>
+                        <li><a class="hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h5 class="text-primary font-bold text-sm uppercase tracking-widest">Legal</h5>
+                    <ul class="space-y-2 text-on-surface-variant text-sm font-body">
+                        <li><a class="hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">Política de Privacidad</a></li>
+                        <li><a class="hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-surface-variant flex justify-between items-center text-outline text-[10px] uppercase tracking-widest">
+                <div>© {new Date().getFullYear()} DIMAR EVENTOS. THE KINETIC NOIR.</div>
+                <div class="flex gap-4">
+                    <span>EST: 2012</span>
+                    <span>LOC: COL</span>
+                </div>
+            </div>
+        </footer>
+	</body>
+</html>
+
